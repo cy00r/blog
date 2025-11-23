@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Manish&#39;s Blog</title>
+  
+  <subtitle>Blockchain Systems &amp; Protocol Engineer</subtitle>
+  <link href="https://cy00r.github.io/blog/atom.xml" rel="self"/>
+  
+  <link href="https://cy00r.github.io/blog/"/>
+  <updated>2025-11-23T20:09:03.102Z</updated>
+  <id>https://cy00r.github.io/blog/</id>
+  
+  <author>
+    <name>Manish Kumar</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War</title>
+    <link href="https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/"/>
+    <id>https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/</id>
+    <published>2025-11-23T18:30:00.000Z</published>
+    <updated>2025-11-23T20:09:03.102Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="The-Core-Narrative"><a href="#The-Core-Narrative" class="headerlink" title="The Core Narrative"></a>The Core Narrative</h2><p>Fusaka — a combination of <strong>Fulu (Consensus Layer)</strong> and <strong>Osaka (Execution Layer)</strong> — is Ethereum’s most aggressive attempt to reclaim dominance in the Data Availability (DA) market.</p><p><strong>Mainnet Target Date:</strong> December 3, 2025.</p><p>Over the past two years, Alt-DAs such as <strong>Celestia</strong>, <strong>EigenDA</strong>, and <strong>Avail</strong> gained momentum as low-cost DA solutions for rollups. Fusaka changes the equation by fundamentally increasing Ethereum’s own DA throughput and lowering its native DA cost.</p><hr><h2 id="PeerDAS-EIP-7594-The-Game-Changer"><a href="#PeerDAS-EIP-7594-The-Game-Changer" class="headerlink" title="PeerDAS (EIP-7594): The Game Changer"></a>PeerDAS (EIP-7594): The Game Changer</h2><p>Before Fusaka, Ethereum nodes had to <strong>download entire blobs</strong> to verify data availability — limiting scalable data throughput to ~3–6 blobs per block.</p><h3 id="Sampling-Instead-of-Downloading"><a href="#Sampling-Instead-of-Downloading" class="headerlink" title="Sampling Instead of Downloading"></a>Sampling Instead of Downloading</h3><p>PeerDAS (Peer Data Availability Sampling) introduces:</p><ul><li><strong>Random sampling</strong> instead of full blob downloads  </li><li><strong>Reed-Solomon erasure coding</strong> for recoverability  </li><li><strong>Lower bandwidth requirement per node</strong>  </li><li><strong>Massive DA scaling</strong>, targeting <strong>64+ blobs per block</strong> in future updates</li></ul><p>Because nodes only download tiny random pieces, the network can safely increase total blob capacity without overwhelming home stakers.</p><hr><h2 id="BPO-Forks-EIP-7892-Ethereum’s-New-“Volume-Knob”"><a href="#BPO-Forks-EIP-7892-Ethereum’s-New-“Volume-Knob”" class="headerlink" title="BPO Forks (EIP-7892): Ethereum’s New “Volume Knob”"></a>BPO Forks (EIP-7892): Ethereum’s New “Volume Knob”</h2><p><strong>BPO &#x3D; Blob-Parameter-Only fork</strong></p><p>Before Fusaka, increasing blob capacity required a <strong>full hard fork</strong>.</p><p>Now Ethereum can adjust blob limits <em>without</em> a major network upgrade.</p><h3 id="Scheduled-Capacity-Increases"><a href="#Scheduled-Capacity-Increases" class="headerlink" title="Scheduled Capacity Increases"></a>Scheduled Capacity Increases</h3><ul><li><strong>Dec 3, 2025 — Fusaka mainnet launch</strong></li><li><strong>Dec 9, 2025 — BPO1 (+67% blobs)</strong></li><li><strong>Jan 7, 2026 — BPO2 (+133% total increase)</strong></li></ul><p>This introduces a flexible system that lets Ethereum match DA capacity to real-time demand.</p><h3 id="Data-Throughput-Roadmap-Blobs-per-Block"><a href="#Data-Throughput-Roadmap-Blobs-per-Block" class="headerlink" title="Data Throughput Roadmap (Blobs per Block)"></a>Data Throughput Roadmap (Blobs per Block)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Current (Dencun)    : ▇▇▇ (3 Target / 6 Max)</span><br><span class="line">                      └─ ~0.75 MB max per block</span><br><span class="line"></span><br><span class="line">Fusaka Launch (Dec) : ▇▇▇▇▇▇▇▇ (9 Target / 18 Max)</span><br><span class="line">                      └─ ~2.2 MB max per block (3x Increase)</span><br><span class="line"></span><br><span class="line">Fusaka BPO2 (Jan)   : ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ (15 Target / 30 Max)</span><br><span class="line">                      └─ ~3.7 MB max per block (5x Increase)</span><br><span class="line"></span><br><span class="line">Future Goal (PeerDAS): ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇... (64+ Target)</span><br><span class="line">                      └─ ~8.0 MB+ max per block (21x+ Increase)</span><br></pre></td></tr></table></figure><p>This roadmap illustrates Ethereum’s aggressive scaling strategy, moving from the current 3-6 blob capacity to a future target of 64+ blobs per block through PeerDAS implementation.</p><hr><h2 id="Impact-on-Alt-DAs-Celestia-EigenDA-Avail"><a href="#Impact-on-Alt-DAs-Celestia-EigenDA-Avail" class="headerlink" title="Impact on Alt-DAs (Celestia, EigenDA, Avail)"></a>Impact on Alt-DAs (Celestia, EigenDA, Avail)</h2><p>Fusaka doesn’t destroy Alt-DAs — it compresses their margins.</p><h3 id="Side-by-Side-Comparison"><a href="#Side-by-Side-Comparison" class="headerlink" title="Side-by-Side Comparison"></a>Side-by-Side Comparison</h3><table><thead><tr><th>Feature</th><th>Ethereum (Fusaka)</th><th>Alt-DAs (Celestia, EigenDA, Avail)</th></tr></thead><tbody><tr><td>Throughput</td><td>High (PeerDAS scaling)</td><td>Very High (DA-first chains)</td></tr><tr><td>Cost</td><td>Low</td><td>Lowest</td></tr><tr><td>Security</td><td>Gold Standard (ETH L1)</td><td>Smaller validator sets &#x2F; restaking</td></tr><tr><td>Use Case</td><td>General rollups + L2s</td><td>Ultra-high throughput apps</td></tr></tbody></table><h3 id="The-Squeeze"><a href="#The-Squeeze" class="headerlink" title="The Squeeze"></a>The Squeeze</h3><p>General-purpose rollups like <strong>Arbitrum</strong>, <strong>Optimism</strong>, <strong>Base</strong>, and <strong>zkSync</strong> will see fees fall significantly.<br>Their incentive to migrate to Alt-DAs decreases.</p><h3 id="The-Pivot-for-Alt-DAs"><a href="#The-Pivot-for-Alt-DAs" class="headerlink" title="The Pivot for Alt-DAs"></a>The Pivot for Alt-DAs</h3><ul><li><strong>Celestia</strong> will target bandwidth-heavy use cases (gaming, social, on-chain compute).</li><li><strong>EigenDA</strong> benefits indirectly because Fusaka increases the L1 gas limit (EIP-7935), lowering proof costs.</li></ul><hr><h2 id="Other-Goodies-in-Fusaka"><a href="#Other-Goodies-in-Fusaka" class="headerlink" title="Other Goodies in Fusaka"></a>Other Goodies in Fusaka</h2><p>These upgrades ship alongside the DA improvements:</p><h3 id="1-EIP-7935-—-Gas-Limit-Increase"><a href="#1-EIP-7935-—-Gas-Limit-Increase" class="headerlink" title="1. EIP-7935 — Gas Limit Increase"></a>1. EIP-7935 — Gas Limit Increase</h3><p>Block gas limit doubles from <strong>30M → ~60M</strong>, increasing L1 computation capacity.</p><h3 id="2-EIP-7951-—-Passkey-Support"><a href="#2-EIP-7951-—-Passkey-Support" class="headerlink" title="2. EIP-7951 — Passkey Support"></a>2. EIP-7951 — Passkey Support</h3><p>Adds <strong>secp256r1</strong> cryptography, enabling <strong>FaceID&#x2F;TouchID</strong> wallet authentication.</p><h3 id="3-EIP-7934-—-Max-Block-Size-Cap"><a href="#3-EIP-7934-—-Max-Block-Size-Cap" class="headerlink" title="3. EIP-7934 — Max Block Size Cap"></a>3. EIP-7934 — Max Block Size Cap</h3><p>Caps blocks at <strong>10 MB</strong> to prevent data-flood attacks.</p><h3 id="4-EIP-7825-—-Per-Transaction-Gas-Cap"><a href="#4-EIP-7825-—-Per-Transaction-Gas-Cap" class="headerlink" title="4. EIP-7825 — Per-Transaction Gas Cap"></a>4. EIP-7825 — Per-Transaction Gas Cap</h3><p>Prevents one transaction from consuming an entire block.</p><hr><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Fusaka isn’t just an upgrade — <strong>it’s a defensive maneuver</strong>.</p><p>By introducing PeerDAS, BPO forks, and gas limit expansions, Ethereum positions itself as:</p><ul><li>Cheaper  </li><li>Higher throughput  </li><li>More flexible  </li><li>More competitive against modular DA chains</li></ul><p>For 90% of rollups, Ethereum’s DA becomes “good enough,” reducing the economic pressure to migrate to external DA layers.</p><p>External DA still matters — but only for applications that require <em>extreme</em> bandwidth (e.g., gaming, AI, fully on-chain compute).</p><p>Ethereum has effectively said:</p><blockquote><p>“We can be modular too — and we’re not giving up the DA market.”</p></blockquote><hr>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;The-Core-Narrative&quot;&gt;&lt;a href=&quot;#The-Core-Narrative&quot; class=&quot;headerlink&quot; title=&quot;The Core Narrative&quot;&gt;&lt;/a&gt;The Core</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Ethereum" scheme="https://cy00r.github.io/blog/tags/Ethereum/"/>
+    
+    <category term="Fusaka" scheme="https://cy00r.github.io/blog/tags/Fusaka/"/>
+    
+    <category term="PeerDAS" scheme="https://cy00r.github.io/blog/tags/PeerDAS/"/>
+    
+    <category term="Rollups" scheme="https://cy00r.github.io/blog/tags/Rollups/"/>
+    
+    <category term="Data Availability" scheme="https://cy00r.github.io/blog/tags/Data-Availability/"/>
+    
+    <category term="Blockchain Infra" scheme="https://cy00r.github.io/blog/tags/Blockchain-Infra/"/>
+    
+  </entry>
+  
+</feed>

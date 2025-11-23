@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="The Core NarrativeFusaka — a combination of Fulu (Consensus Layer) and Osaka (Execution Layer) — is Ethereum’s most aggressive attempt to reclaim dominance in the Data Availability (DA) market. Mainne">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War">
+<meta property="og:url" content="https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/index.html">
+<meta property="og:site_name" content="Manish&#39;s Blog">
+<meta property="og:description" content="The Core NarrativeFusaka — a combination of Fulu (Consensus Layer) and Osaka (Execution Layer) — is Ethereum’s most aggressive attempt to reclaim dominance in the Data Availability (DA) market. Mainne">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-11-23T18:30:00.000Z">
+<meta property="article:modified_time" content="2025-11-23T20:09:03.102Z">
+<meta property="article:author" content="Manish Kumar">
+<meta property="article:tag" content="Blockchain Infra">
+<meta property="article:tag" content="Data Availability">
+<meta property="article:tag" content="Ethereum">
+<meta property="article:tag" content="Fusaka">
+<meta property="article:tag" content="PeerDAS">
+<meta property="article:tag" content="Rollups">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/blog/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/blog/atom.xml" title="Manish&#39;s Blog" type="application/atom+xml" />
+    
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/blog/">Home</a></li>
+         
+          <li><a href="/blog/about/">About</a></li>
+         
+          <li><a href="/blog/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/cy00r">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&text=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&title=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&is_video=false&description=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War&body=Check out this article: https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&title=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&title=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&title=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&title=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&name=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Core-Narrative"><span class="toc-number">1.</span> <span class="toc-text">The Core Narrative</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PeerDAS-EIP-7594-The-Game-Changer"><span class="toc-number">2.</span> <span class="toc-text">PeerDAS (EIP-7594): The Game Changer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sampling-Instead-of-Downloading"><span class="toc-number">2.1.</span> <span class="toc-text">Sampling Instead of Downloading</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BPO-Forks-EIP-7892-Ethereum%E2%80%99s-New-%E2%80%9CVolume-Knob%E2%80%9D"><span class="toc-number">3.</span> <span class="toc-text">BPO Forks (EIP-7892): Ethereum’s New “Volume Knob”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Scheduled-Capacity-Increases"><span class="toc-number">3.1.</span> <span class="toc-text">Scheduled Capacity Increases</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Throughput-Roadmap-Blobs-per-Block"><span class="toc-number">3.2.</span> <span class="toc-text">Data Throughput Roadmap (Blobs per Block)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Impact-on-Alt-DAs-Celestia-EigenDA-Avail"><span class="toc-number">4.</span> <span class="toc-text">Impact on Alt-DAs (Celestia, EigenDA, Avail)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Side-by-Side-Comparison"><span class="toc-number">4.1.</span> <span class="toc-text">Side-by-Side Comparison</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Squeeze"><span class="toc-number">4.2.</span> <span class="toc-text">The Squeeze</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Pivot-for-Alt-DAs"><span class="toc-number">4.3.</span> <span class="toc-text">The Pivot for Alt-DAs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other-Goodies-in-Fusaka"><span class="toc-number">5.</span> <span class="toc-text">Other Goodies in Fusaka</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-EIP-7935-%E2%80%94-Gas-Limit-Increase"><span class="toc-number">5.1.</span> <span class="toc-text">1. EIP-7935 — Gas Limit Increase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-EIP-7951-%E2%80%94-Passkey-Support"><span class="toc-number">5.2.</span> <span class="toc-text">2. EIP-7951 — Passkey Support</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-EIP-7934-%E2%80%94-Max-Block-Size-Cap"><span class="toc-number">5.3.</span> <span class="toc-text">3. EIP-7934 — Max Block Size Cap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-EIP-7825-%E2%80%94-Per-Transaction-Gas-Cap"><span class="toc-number">5.4.</span> <span class="toc-text">4. EIP-7825 — Per-Transaction Gas Cap</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">6.</span> <span class="toc-text">Summary</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Manish Kumar</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2025-11-23T18:30:00.000Z" itemprop="datePublished">2025-11-24</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/blog/tags/Blockchain-Infra/" rel="tag">Blockchain Infra</a>, <a class="tag-link-link" href="/blog/tags/Data-Availability/" rel="tag">Data Availability</a>, <a class="tag-link-link" href="/blog/tags/Ethereum/" rel="tag">Ethereum</a>, <a class="tag-link-link" href="/blog/tags/Fusaka/" rel="tag">Fusaka</a>, <a class="tag-link-link" href="/blog/tags/PeerDAS/" rel="tag">PeerDAS</a>, <a class="tag-link-link" href="/blog/tags/Rollups/" rel="tag">Rollups</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="The-Core-Narrative"><a href="#The-Core-Narrative" class="headerlink" title="The Core Narrative"></a>The Core Narrative</h2><p>Fusaka — a combination of <strong>Fulu (Consensus Layer)</strong> and <strong>Osaka (Execution Layer)</strong> — is Ethereum’s most aggressive attempt to reclaim dominance in the Data Availability (DA) market.</p>
+<p><strong>Mainnet Target Date:</strong> December 3, 2025.</p>
+<p>Over the past two years, Alt-DAs such as <strong>Celestia</strong>, <strong>EigenDA</strong>, and <strong>Avail</strong> gained momentum as low-cost DA solutions for rollups. Fusaka changes the equation by fundamentally increasing Ethereum’s own DA throughput and lowering its native DA cost.</p>
+<hr>
+<h2 id="PeerDAS-EIP-7594-The-Game-Changer"><a href="#PeerDAS-EIP-7594-The-Game-Changer" class="headerlink" title="PeerDAS (EIP-7594): The Game Changer"></a>PeerDAS (EIP-7594): The Game Changer</h2><p>Before Fusaka, Ethereum nodes had to <strong>download entire blobs</strong> to verify data availability — limiting scalable data throughput to ~3–6 blobs per block.</p>
+<h3 id="Sampling-Instead-of-Downloading"><a href="#Sampling-Instead-of-Downloading" class="headerlink" title="Sampling Instead of Downloading"></a>Sampling Instead of Downloading</h3><p>PeerDAS (Peer Data Availability Sampling) introduces:</p>
+<ul>
+<li><strong>Random sampling</strong> instead of full blob downloads  </li>
+<li><strong>Reed-Solomon erasure coding</strong> for recoverability  </li>
+<li><strong>Lower bandwidth requirement per node</strong>  </li>
+<li><strong>Massive DA scaling</strong>, targeting <strong>64+ blobs per block</strong> in future updates</li>
+</ul>
+<p>Because nodes only download tiny random pieces, the network can safely increase total blob capacity without overwhelming home stakers.</p>
+<hr>
+<h2 id="BPO-Forks-EIP-7892-Ethereum’s-New-“Volume-Knob”"><a href="#BPO-Forks-EIP-7892-Ethereum’s-New-“Volume-Knob”" class="headerlink" title="BPO Forks (EIP-7892): Ethereum’s New “Volume Knob”"></a>BPO Forks (EIP-7892): Ethereum’s New “Volume Knob”</h2><p><strong>BPO &#x3D; Blob-Parameter-Only fork</strong></p>
+<p>Before Fusaka, increasing blob capacity required a <strong>full hard fork</strong>.</p>
+<p>Now Ethereum can adjust blob limits <em>without</em> a major network upgrade.</p>
+<h3 id="Scheduled-Capacity-Increases"><a href="#Scheduled-Capacity-Increases" class="headerlink" title="Scheduled Capacity Increases"></a>Scheduled Capacity Increases</h3><ul>
+<li><strong>Dec 3, 2025 — Fusaka mainnet launch</strong></li>
+<li><strong>Dec 9, 2025 — BPO1 (+67% blobs)</strong></li>
+<li><strong>Jan 7, 2026 — BPO2 (+133% total increase)</strong></li>
+</ul>
+<p>This introduces a flexible system that lets Ethereum match DA capacity to real-time demand.</p>
+<h3 id="Data-Throughput-Roadmap-Blobs-per-Block"><a href="#Data-Throughput-Roadmap-Blobs-per-Block" class="headerlink" title="Data Throughput Roadmap (Blobs per Block)"></a>Data Throughput Roadmap (Blobs per Block)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Current (Dencun)    : ▇▇▇ (3 Target / 6 Max)</span><br><span class="line">                      └─ ~0.75 MB max per block</span><br><span class="line"></span><br><span class="line">Fusaka Launch (Dec) : ▇▇▇▇▇▇▇▇ (9 Target / 18 Max)</span><br><span class="line">                      └─ ~2.2 MB max per block (3x Increase)</span><br><span class="line"></span><br><span class="line">Fusaka BPO2 (Jan)   : ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ (15 Target / 30 Max)</span><br><span class="line">                      └─ ~3.7 MB max per block (5x Increase)</span><br><span class="line"></span><br><span class="line">Future Goal (PeerDAS): ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇... (64+ Target)</span><br><span class="line">                      └─ ~8.0 MB+ max per block (21x+ Increase)</span><br></pre></td></tr></table></figure>
+
+<p>This roadmap illustrates Ethereum’s aggressive scaling strategy, moving from the current 3-6 blob capacity to a future target of 64+ blobs per block through PeerDAS implementation.</p>
+<hr>
+<h2 id="Impact-on-Alt-DAs-Celestia-EigenDA-Avail"><a href="#Impact-on-Alt-DAs-Celestia-EigenDA-Avail" class="headerlink" title="Impact on Alt-DAs (Celestia, EigenDA, Avail)"></a>Impact on Alt-DAs (Celestia, EigenDA, Avail)</h2><p>Fusaka doesn’t destroy Alt-DAs — it compresses their margins.</p>
+<h3 id="Side-by-Side-Comparison"><a href="#Side-by-Side-Comparison" class="headerlink" title="Side-by-Side Comparison"></a>Side-by-Side Comparison</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Ethereum (Fusaka)</th>
+<th>Alt-DAs (Celestia, EigenDA, Avail)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Throughput</td>
+<td>High (PeerDAS scaling)</td>
+<td>Very High (DA-first chains)</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Low</td>
+<td>Lowest</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Gold Standard (ETH L1)</td>
+<td>Smaller validator sets &#x2F; restaking</td>
+</tr>
+<tr>
+<td>Use Case</td>
+<td>General rollups + L2s</td>
+<td>Ultra-high throughput apps</td>
+</tr>
+</tbody></table>
+<h3 id="The-Squeeze"><a href="#The-Squeeze" class="headerlink" title="The Squeeze"></a>The Squeeze</h3><p>General-purpose rollups like <strong>Arbitrum</strong>, <strong>Optimism</strong>, <strong>Base</strong>, and <strong>zkSync</strong> will see fees fall significantly.<br>Their incentive to migrate to Alt-DAs decreases.</p>
+<h3 id="The-Pivot-for-Alt-DAs"><a href="#The-Pivot-for-Alt-DAs" class="headerlink" title="The Pivot for Alt-DAs"></a>The Pivot for Alt-DAs</h3><ul>
+<li><strong>Celestia</strong> will target bandwidth-heavy use cases (gaming, social, on-chain compute).</li>
+<li><strong>EigenDA</strong> benefits indirectly because Fusaka increases the L1 gas limit (EIP-7935), lowering proof costs.</li>
+</ul>
+<hr>
+<h2 id="Other-Goodies-in-Fusaka"><a href="#Other-Goodies-in-Fusaka" class="headerlink" title="Other Goodies in Fusaka"></a>Other Goodies in Fusaka</h2><p>These upgrades ship alongside the DA improvements:</p>
+<h3 id="1-EIP-7935-—-Gas-Limit-Increase"><a href="#1-EIP-7935-—-Gas-Limit-Increase" class="headerlink" title="1. EIP-7935 — Gas Limit Increase"></a>1. EIP-7935 — Gas Limit Increase</h3><p>Block gas limit doubles from <strong>30M → ~60M</strong>, increasing L1 computation capacity.</p>
+<h3 id="2-EIP-7951-—-Passkey-Support"><a href="#2-EIP-7951-—-Passkey-Support" class="headerlink" title="2. EIP-7951 — Passkey Support"></a>2. EIP-7951 — Passkey Support</h3><p>Adds <strong>secp256r1</strong> cryptography, enabling <strong>FaceID&#x2F;TouchID</strong> wallet authentication.</p>
+<h3 id="3-EIP-7934-—-Max-Block-Size-Cap"><a href="#3-EIP-7934-—-Max-Block-Size-Cap" class="headerlink" title="3. EIP-7934 — Max Block Size Cap"></a>3. EIP-7934 — Max Block Size Cap</h3><p>Caps blocks at <strong>10 MB</strong> to prevent data-flood attacks.</p>
+<h3 id="4-EIP-7825-—-Per-Transaction-Gas-Cap"><a href="#4-EIP-7825-—-Per-Transaction-Gas-Cap" class="headerlink" title="4. EIP-7825 — Per-Transaction Gas Cap"></a>4. EIP-7825 — Per-Transaction Gas Cap</h3><p>Prevents one transaction from consuming an entire block.</p>
+<hr>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Fusaka isn’t just an upgrade — <strong>it’s a defensive maneuver</strong>.</p>
+<p>By introducing PeerDAS, BPO forks, and gas limit expansions, Ethereum positions itself as:</p>
+<ul>
+<li>Cheaper  </li>
+<li>Higher throughput  </li>
+<li>More flexible  </li>
+<li>More competitive against modular DA chains</li>
+</ul>
+<p>For 90% of rollups, Ethereum’s DA becomes “good enough,” reducing the economic pressure to migrate to external DA layers.</p>
+<p>External DA still matters — but only for applications that require <em>extreme</em> bandwidth (e.g., gaming, AI, fully on-chain compute).</p>
+<p>Ethereum has effectively said:</p>
+<blockquote>
+<p>“We can be modular too — and we’re not giving up the DA market.”</p>
+</blockquote>
+<hr>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/blog/">Home</a></li>
+         
+          <li><a href="/blog/about/">About</a></li>
+         
+          <li><a href="/blog/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/cy00r">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Core-Narrative"><span class="toc-number">1.</span> <span class="toc-text">The Core Narrative</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PeerDAS-EIP-7594-The-Game-Changer"><span class="toc-number">2.</span> <span class="toc-text">PeerDAS (EIP-7594): The Game Changer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sampling-Instead-of-Downloading"><span class="toc-number">2.1.</span> <span class="toc-text">Sampling Instead of Downloading</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BPO-Forks-EIP-7892-Ethereum%E2%80%99s-New-%E2%80%9CVolume-Knob%E2%80%9D"><span class="toc-number">3.</span> <span class="toc-text">BPO Forks (EIP-7892): Ethereum’s New “Volume Knob”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Scheduled-Capacity-Increases"><span class="toc-number">3.1.</span> <span class="toc-text">Scheduled Capacity Increases</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Throughput-Roadmap-Blobs-per-Block"><span class="toc-number">3.2.</span> <span class="toc-text">Data Throughput Roadmap (Blobs per Block)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Impact-on-Alt-DAs-Celestia-EigenDA-Avail"><span class="toc-number">4.</span> <span class="toc-text">Impact on Alt-DAs (Celestia, EigenDA, Avail)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Side-by-Side-Comparison"><span class="toc-number">4.1.</span> <span class="toc-text">Side-by-Side Comparison</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Squeeze"><span class="toc-number">4.2.</span> <span class="toc-text">The Squeeze</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Pivot-for-Alt-DAs"><span class="toc-number">4.3.</span> <span class="toc-text">The Pivot for Alt-DAs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other-Goodies-in-Fusaka"><span class="toc-number">5.</span> <span class="toc-text">Other Goodies in Fusaka</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-EIP-7935-%E2%80%94-Gas-Limit-Increase"><span class="toc-number">5.1.</span> <span class="toc-text">1. EIP-7935 — Gas Limit Increase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-EIP-7951-%E2%80%94-Passkey-Support"><span class="toc-number">5.2.</span> <span class="toc-text">2. EIP-7951 — Passkey Support</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-EIP-7934-%E2%80%94-Max-Block-Size-Cap"><span class="toc-number">5.3.</span> <span class="toc-text">3. EIP-7934 — Max Block Size Cap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-EIP-7825-%E2%80%94-Per-Transaction-Gas-Cap"><span class="toc-number">5.4.</span> <span class="toc-text">4. EIP-7825 — Per-Transaction Gas Cap</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">6.</span> <span class="toc-text">Summary</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&text=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&title=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&is_video=false&description=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War&body=Check out this article: https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&title=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&title=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&title=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&title=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cy00r.github.io/blog/2025/11/24/fusaka-upgrade-ethereum-data-availability/&name=The Empire Strikes Back: How Ethereum&#39;s &#39;Fusaka&#39; Upgrade Redefines the Data Availability War&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2025 Manish Kumar
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/blog/">Home</a></li>
+         
+          <li><a href="/blog/about/">About</a></li>
+         
+          <li><a href="/blog/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/cy00r">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="/blog/lib/meslo-LG/styles.css">
+
+
+<link rel="stylesheet" href="/blog/lib/justified-gallery/justifiedGallery.min.css">
+
+
+
+<!-- jquery -->
+
+<script src="/blog/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/blog/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/blog/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
